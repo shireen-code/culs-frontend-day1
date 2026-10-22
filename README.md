@@ -1,6 +1,12 @@
-# Developer
+**Developer:** Shreen Fatima Ahmed
 
-Shreen Fatima Ahmed
+Originally created by @pepe Josef Pospisil.
+
+## What I changed
+
+- Fixed the broken “what grows here” link in the introduction.
+- Added a search field to filter herbs by name, botanical name, use, or growing type.
+- Improved the alignment and spacing of the herb cards.
 
 # The Little Herb Garden
 
