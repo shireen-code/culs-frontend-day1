@@ -2,6 +2,8 @@
 
 const list = document.querySelector("#herbs-list")
 const count = document.querySelector(".count")
+const search = document.querySelector("#herb-search")
+let herbs = []
 
 async function loadHerbs() {
   const response = await fetch("data/herbs.json")
@@ -29,9 +31,27 @@ function card(herb) {
 }
 
 async function show() {
-  const herbs = await loadHerbs()
-  list.replaceChildren(...herbs.map(card))
-  count.textContent = `${herbs.length} herbs grow here.`
+  herbs = await loadHerbs()
+  renderHerbs()
 }
+
+function renderHerbs() {
+  const query = search.value.trim().toLowerCase()
+  const matches = herbs.filter(herb =>
+    [herb.name, herb.latin, herb.use, herb.life]
+      .some(value => value.toLowerCase().includes(query)))
+
+  list.replaceChildren(...matches.map(card))
+
+  if (!query) {
+    count.textContent = `${herbs.length} herbs grow here.`
+  } else if (matches.length === 0) {
+    count.textContent = `No herbs match "${query}".`
+  } else {
+    count.textContent = `${matches.length} of ${herbs.length} herbs match "${query}".`
+  }
+}
+
+search.addEventListener("input", renderHerbs)
 
 show()
