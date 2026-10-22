@@ -99,6 +99,10 @@ section {
   border: 1px solid var(--line);
   border-radius: 0.5rem;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
 .card h3 {
