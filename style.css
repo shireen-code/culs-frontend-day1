@@ -67,6 +67,26 @@ section {
   margin-bottom: 2.5rem;
 }
 
+.search-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.herb-search {
+  width: 100%;
+  max-width: 24rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  font: inherit;
+}
+
+.herb-search:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 2px;
+}
+
 .intro {
   display: grid;
   gap: 1.5rem;

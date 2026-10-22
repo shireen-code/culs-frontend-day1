@@ -33,7 +33,9 @@
 
     <section id="herbs">
       <h2>What grows here</h2>
-      <p class="count">Loading the herbs…</p>
+      <label class="search-label" for="herb-search">Search herbs</label>
+      <input id="herb-search" class="herb-search" type="search" aria-controls="herbs-list">
+      <p class="count" aria-live="polite">Loading the herbs…</p>
       <ul id="herbs-list" class="cards"></ul>
     </section>
 
